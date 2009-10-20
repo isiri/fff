@@ -1,0 +1,14 @@
+%p
+  = form.label :email, t('email')
+  %br
+  = form.text_field :email
+
+%p
+  = form.label :password, t(form.object.new_record? ? "password" : "change_password")
+  %br
+  = form.password_field :password
+
+%p
+  = form.label :password_confirmation, t('password_confirmation')
+  %br
+  = form.password_field :password_confirmation

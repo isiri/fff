@@ -1,0 +1,23 @@
+!!! XML
+!!!
+%html{html_attrs}
+  %head
+    %title= "Forever Family Foundation"
+    = stylesheet_link_tag 'compiled/screen', :media => 'screen'
+    = stylesheet_link_tag 'compiled/print', :media => 'print'
+    = sprockets_include_tag
+    = javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery?
+
+%body
+  .container
+    .header
+      %h1 Forever Family Foundation
+      = link_to t("home"), root_path      
+      = link_to t("login"), new_user_session_path      
+      = link_to t("register"), new_account_path      
+      = link_to t("logout"), user_session_path, :method => :delete if current_user
+    .content
+      %p
+        = flash[:notice]
+      = yield
+  

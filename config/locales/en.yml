@@ -1,0 +1,52 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  home: Home
+  login: Login
+  register: Register
+  logout: Logout
+  email: Email
+  password: Password
+  change_password: Change password
+  password_confirmation: Password confirmation
+  edit_my_account: Edit my account
+  update: Update
+  remeber_me: Remeber me
+
+  flash:
+    user:
+      create:
+        success: Account registered!
+      update:
+        success: Account updated!
+      login:
+        success: Login successful!
+        required: You must be logged in to access this page
+      logout:
+        success: Logout successful! 
+        required: You must be logged out to access this page
+        
+  authlogic:
+    error_messages:
+      login_blank: can not be blank
+      login_not_found: is not valid
+      login_invalid: should use only letters, numbers, spaces, and .-_@ please.
+      consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded, account is disabled.
+      email_invalid: is not valid
+      email_dup: entered is already taken
+      password_blank: can not be blank
+      password_invalid: is not valid
+      not_active: Your account is not active
+      not_confirmed: Your account is not confirmed
+      not_approved: Your account is not approved
+      no_authentication_details: You did not provide any details for authentication.
+      models:
+        user_session: UserSession (or whatever name you are using)
+        attributes:
+          user_session: (or whatever name you are using)
+          login: login
+          email: email
+          password: password
+          remember_me: remember me
+          

@@ -1,0 +1,302 @@
+# Logfile created on Tue Oct 20 11:50:21 +0530 2009  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (17.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'aric.smith@kautzergoyette.name') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '773b3e5914b26536914e7ca6783b0dd06b620cd8b2fc36e7a689c4a70e24dc62f43c1a94df49fd50dc5d6c08f3ceee4f4c2683d2fbe2260f2e3149b41ae31457') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'U12uEewkzZvKseIM-r50') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `email`) VALUES('U12uEewkzZvKseIM-r50', '2009-10-20 06:20:38', '2009-10-20 06:20:38', 'c5a1bfe71c27a41e0ff367e10125def74daba922d74b3e494a6b4a4f8038a8cb5f68322b9c06673d9234162cbe0130863ced4321349326c1ca358f3dedd2233a', 'koxoSXxXt_Njb76NlO18', '2009-10-20 06:20:38', 0, '0.0.0.0', 'RmeChwTpJbDy5AKuYZ8X', '2009-10-20 06:20:38', '773b3e5914b26536914e7ca6783b0dd06b620cd8b2fc36e7a689c4a70e24dc62f43c1a94df49fd50dc5d6c08f3ceee4f4c2683d2fbe2260f2e3149b41ae31457', 1, NULL, NULL, 'aric.smith@kautzergoyette.name')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing UserSessionsController#create (for 0.0.0.0 at 2009-10-20 11:50:38) [POST]
+  Parameters: {"user_session"=>{"login"=>"aric.smith@kautzergoyette.name", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '773b3e5914b26536914e7ca6783b0dd06b620cd8b2fc36e7a689c4a70e24dc62f43c1a94df49fd50dc5d6c08f3ceee4f4c2683d2fbe2260f2e3149b41ae31457') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:38', `perishable_token` = '5slqQmzPwlYv3uk6xGmy', `last_request_at` = '2009-10-20 06:20:38' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 18ms (DB: 23) | 302 Found [http://test.host/user_session?user_session%5Blogin%5D=aric.smith%40kautzergoyette.name&user_session%5Bpassword%5D=password]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:38', `perishable_token` = 'FrgFjv23PF3hrF4qPsdU', `last_request_at` = '2009-10-20 06:20:38' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'alysson@wittingcorwin.biz') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '5bfccbf0de1d7ab8183954676acd8ee14f32591467665346aea26d14a55ce0c8d55311a73b8ab7040c6091a52aba7f2dbbcd80f0704fe85add2cd49cc8622b55') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'Z17svR8LjYmu2CuA6han') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `email`) VALUES('Z17svR8LjYmu2CuA6han', '2009-10-20 06:20:38', '2009-10-20 06:20:38', 'ff24fd4d674c49161f1a9ab11f9e389084e6d5f8236248b58919efe9ed8a2981d9cf70b5aff7dcce80a74f303921b0f2ad48d08867fa49d9dc11666425f7bc00', '-AB40YTPFlhI1EgeASSa', '2009-10-20 06:20:38', 0, '0.0.0.0', 'UNOjSRllZV6xdNEf5LJ9', '2009-10-20 06:20:38', '5bfccbf0de1d7ab8183954676acd8ee14f32591467665346aea26d14a55ce0c8d55311a73b8ab7040c6091a52aba7f2dbbcd80f0704fe85add2cd49cc8622b55', 1, NULL, NULL, 'alysson@wittingcorwin.biz')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:38', `perishable_token` = 'NFiVV0W4ic2oGUXPzOPb', `last_login_at` = '2009-10-20 06:20:38', `last_login_ip` = '0.0.0.0', `current_login_at` = '2009-10-20 06:20:38', `login_count` = 2, `last_request_at` = '2009-10-20 06:20:38' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing UserSessionsController#destroy (for 0.0.0.0 at 2009-10-20 11:50:38) [DELETE]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:38', `perishable_token` = 'V8MNu9zvdLMyYamq0b6o', `last_request_at` = '2009-10-20 06:20:38' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/user_session/new
+Completed in 25ms (DB: 12) | 302 Found [http://test.host/user_session]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2009-10-20 11:50:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 59ms (View: 56, DB: 1) | 200 OK [http://test.host/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2009-10-20 11:50:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://test.host/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-10-20 11:50:38) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"greg@lesch.us"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'greg@lesch.us') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '3941c90b882d6a2e6b195399ae6712fae80234c954637295d347ce89b8defe382a944af23fabf09b1b5a49d3bc43fb24cba6c8149a17923dab69bc2d7205d7af') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'ByvNi1Z7HQ8_H8QnhiT_') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `email`) VALUES('ByvNi1Z7HQ8_H8QnhiT_', '2009-10-20 06:20:39', '2009-10-20 06:20:39', '3d5fc3cdf6a3a130b11875fed11c1ed8b3ee4be2210d06c57222aa94cc8117ce05b575124fc9fca64431b5b69039fe290d9a2b308bc25fc0812b7602b68ac2ea', '4C-Oe3_o9MAkUWRmv8QL', '2009-10-20 06:20:39', 0, '0.0.0.0', 'V2rkOLb1uY5Z4A81Ch6b', '2009-10-20 06:20:39', '3941c90b882d6a2e6b195399ae6712fae80234c954637295d347ce89b8defe382a944af23fabf09b1b5a49d3bc43fb24cba6c8149a17923dab69bc2d7205d7af', 1, NULL, NULL, 'greg@lesch.us')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/account
+Completed in 24ms (DB: 2) | 302 Found [http://test.host/account?user%5Bemail%5D=greg%40lesch.us&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;36;1mSQL (3.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-10-20 11:50:39) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"willy@harber.info"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'willy@harber.info') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'b9a52ae4b29a8949e4a1f20b66ac9d56a9e08c72bdb7aed8cedaf764d1373146c9e0468d9aee02b90c6151d3c6993789fe281373438328f6a908d980ba5ff72a') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'pKpJUHKeZBOkQ2JdnsK_') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `email`) VALUES('pKpJUHKeZBOkQ2JdnsK_', '2009-10-20 06:20:39', '2009-10-20 06:20:39', '62eb4a48adee9a92a592ff3dfb04b96142a35206c8f5f4ff1272ca84925b24561925488e60236711bdc0dc8b281cdacb2e19425b8140dbaf9f464dcff92291dd', '5NQ9F5T1nq6nAauljqMb', '2009-10-20 06:20:39', 0, '0.0.0.0', 'w-RyleIwUK7klWOrVDKC', '2009-10-20 06:20:39', 'b9a52ae4b29a8949e4a1f20b66ac9d56a9e08c72bdb7aed8cedaf764d1373146c9e0468d9aee02b90c6151d3c6993789fe281373438328f6a908d980ba5ff72a', 1, NULL, NULL, 'willy@harber.info')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/account
+Completed in 19ms (DB: 5) | 302 Found [http://test.host/account?user%5Bemail%5D=willy%40harber.info&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-10-20 11:50:39) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"scottie@lakinroberts.info"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'scottie@lakinroberts.info') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '19d040cdbd849dfff12de4801b1f697d48e9a83aae363a342494c77ca649a4a91f4203124c8cc8eb7d2ac5bdd18ede3e414c4050a63112b8b1da714e1286b305') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'fF94pisn54oxL8nziFus') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `email`) VALUES('fF94pisn54oxL8nziFus', '2009-10-20 06:20:39', '2009-10-20 06:20:39', '0f29c706f1a13370a162a852108492fb5478cc813e1989b0b9c7f125fd4d5972c165d655efc6fc0ab782acbec13bbbb4e3b4de17c6452d9f6d8e32da85b8c00e', 'mlUnNsSG4Bu2LSHTjLSP', '2009-10-20 06:20:39', 0, '0.0.0.0', 'hsQPrbQ1miBAWk-KZC5v', '2009-10-20 06:20:39', '19d040cdbd849dfff12de4801b1f697d48e9a83aae363a342494c77ca649a4a91f4203124c8cc8eb7d2ac5bdd18ede3e414c4050a63112b8b1da714e1286b305', 1, NULL, NULL, 'scottie@lakinroberts.info')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/account
+Completed in 23ms (DB: 3) | 302 Found [http://test.host/account?user%5Bemail%5D=scottie%40lakinroberts.info&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'marge_simonis@beahanolson.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'bc1d38a0362d6027c6ae2ef03a5ec11617b37a193c3730a402523d294bfbf26fda47b4e5a6a2652d2075a73ae04af9b9917445031cd9c00b8769cd1ea8b09d1a') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY '8MIGcyDH9FLspr1WD4k8') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `email`) VALUES('8MIGcyDH9FLspr1WD4k8', '2009-10-20 06:20:39', '2009-10-20 06:20:39', '32a1e06b353359ba425fa9aa75f56b3f5a658efee0325884c641efce7922940df2aca771008035caddb2531de14a25ec5e995e5543209ad64ed2ceb014b78276', 'KCBf-UoLT3FiOPBL__ut', '2009-10-20 06:20:39', 0, '0.0.0.0', 'JnDcCLC9eDZASHz1NVWs', '2009-10-20 06:20:39', 'bc1d38a0362d6027c6ae2ef03a5ec11617b37a193c3730a402523d294bfbf26fda47b4e5a6a2652d2075a73ae04af9b9917445031cd9c00b8769cd1ea8b09d1a', 1, NULL, NULL, 'marge_simonis@beahanolson.com')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `perishable_token` = 'LzmNVPBhriOvyoWhZk6k', `last_login_at` = '2009-10-20 06:20:39', `last_login_ip` = '0.0.0.0', `current_login_at` = '2009-10-20 06:20:39', `login_count` = 2, `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 6[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2009-10-20 11:50:39) [GET]
+  Parameters: {"action"=>"edit", "id"=>"6", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `perishable_token` = 'hAIm-9k1UaAglwcEC4sw', `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 6[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (6.3ms)
+Completed in 22ms (View: 13, DB: 5) | 200 OK [http://test.host/account/edit?id=6]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'ben@luettgenkling.biz') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '318d1ff76f3acaefc34be0bf75df32fd7ecbcb375383b32d1012cffc514ccad1d17efb232f90cd1b576a491844b0ba1b6c019acdd8c7f07df8fb9ca0611ce87a') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'u6bf4HbXWDzwRrT22e68') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `email`) VALUES('u6bf4HbXWDzwRrT22e68', '2009-10-20 06:20:39', '2009-10-20 06:20:39', '8263b2ad1eb568a406a07f42daff4106483840aba471e5720023d7fa8bc2b03a95d5a8d6e9c761be1e555ee6583551e113a2836844f88bbb7d802fb9a08977a9', 'l8S_Wof2s6TAvuYDZs02', '2009-10-20 06:20:39', 0, '0.0.0.0', 'AjFREIQ6WIIGEnkDHIGG', '2009-10-20 06:20:39', '318d1ff76f3acaefc34be0bf75df32fd7ecbcb375383b32d1012cffc514ccad1d17efb232f90cd1b576a491844b0ba1b6c019acdd8c7f07df8fb9ca0611ce87a', 1, NULL, NULL, 'ben@luettgenkling.biz')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `perishable_token` = 'M3yVzhakBPDYYqvwUqrH', `last_login_at` = '2009-10-20 06:20:39', `last_login_ip` = '0.0.0.0', `current_login_at` = '2009-10-20 06:20:39', `login_count` = 2, `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 7[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2009-10-20 11:50:39) [GET]
+  Parameters: {"action"=>"edit", "id"=>"7", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `perishable_token` = 'bZMa78h9hF_q5zEsU_8g', `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 7[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (3.6ms)
+Completed in 19ms (View: 10, DB: 5) | 200 OK [http://test.host/account/edit?id=7]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+
+
+Processing UsersController#new (for 0.0.0.0 at 2009-10-20 11:50:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.9ms)
+Completed in 13ms (View: 11, DB: 1) | 200 OK [http://test.host/account/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing UsersController#new (for 0.0.0.0 at 2009-10-20 11:50:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.6ms)
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://test.host/account/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'bud.gaylord@corwin.biz') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'cfc9aab5c6bd6b27131afad00c5035ac009c0e10cd5ddba674e6eea35e89c3f84b66f46fc8f0fb6ee7f12e408e890750653a5c89563b78c6e0be8479495e11c1') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY '7uJZLJepS5AT1B49DkSn') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `email`) VALUES('7uJZLJepS5AT1B49DkSn', '2009-10-20 06:20:39', '2009-10-20 06:20:39', 'b42b064e2c431f1c915c2be02d4fc7d58fdd6ee1fb19888d4fd8cf0d0a882bdfd8904ac4e75616ce5a85b8706338324a270f430871d326ba72dab4e431b886dc', 'IOFahxba8CiKLG2_HU2W', '2009-10-20 06:20:39', 0, '0.0.0.0', 'WNUDk8WFh7pRceh4ugwB', '2009-10-20 06:20:39', 'cfc9aab5c6bd6b27131afad00c5035ac009c0e10cd5ddba674e6eea35e89c3f84b66f46fc8f0fb6ee7f12e408e890750653a5c89563b78c6e0be8479495e11c1', 1, NULL, NULL, 'bud.gaylord@corwin.biz')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `perishable_token` = 'Nlvq3LSqkOcgA-7245i6', `last_login_at` = '2009-10-20 06:20:39', `last_login_ip` = '0.0.0.0', `current_login_at` = '2009-10-20 06:20:39', `login_count` = 2, `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 8[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing UsersController#update (for 0.0.0.0 at 2009-10-20 11:50:39) [POST]
+  Parameters: {"action"=>"update", "id"=>"8", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"irving.adams@bosco.us"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `perishable_token` = 'Pj8s1vxW8PIBoHf2S71C', `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 8[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'irving.adams@bosco.us' AND `users`.id <> 8) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '7d5f08a91e6c6333141c4fe8c6693f41721d1e4ce22723d567dcb778a2dad0b2ff52faea38e5e11bfb28621dc91ebbed9ee063b87b423bfdc3458a319d52a550' AND `users`.id <> 8) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `crypted_password` = '249ef2c4b70465ccacfe7d9b2ef73f789f506f32e3a477833d76fc12efcdfe00fa57da6353f03a5ebab5090f6f62f746b98be3c07a0dbe434bed026f68d39fe4', `perishable_token` = 'soAqnMBrMWe_l1CHGmxL', `email` = 'irving.adams@bosco.us', `current_login_at` = '2009-10-20 06:20:39', `password_salt` = 'vbISVmMQbDlvrZEZb54h', `login_count` = 3, `persistence_token` = '7d5f08a91e6c6333141c4fe8c6693f41721d1e4ce22723d567dcb778a2dad0b2ff52faea38e5e11bfb28621dc91ebbed9ee063b87b423bfdc3458a319d52a550', `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 8[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/account
+Completed in 26ms (DB: 6) | 302 Found [http://test.host/account?id=8&user%5Bemail%5D=irving.adams%40bosco.us&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'izabella@sawaynmurazik.us') LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '7eec36aff7eb543d857a03bdd138bf9bdedd05468c1d54cf0bc5ca030e39482da18a8cfa87edd180e3f2ac9eff16cee14c8fd8e291a4a75156b3a0ec857ca3ca') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'AkZi9qKalfaFFyDD-nWf') LIMIT 1[0m
+  [4;36;1mUser Create (2.2ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `email`) VALUES('AkZi9qKalfaFFyDD-nWf', '2009-10-20 06:20:39', '2009-10-20 06:20:39', '9cfb32a041cce9fd2c642799bb77184e2d7294aa7cde5f35eb103832729192744c00a9c40d1b58d8187d5df5ca5f33708a3c2a4600bc6b598813a058614669ff', 'QJOTK1ounpprI4HM8AWQ', '2009-10-20 06:20:39', 0, '0.0.0.0', 'mOyn_ZCmponvoGnHjdZU', '2009-10-20 06:20:39', '7eec36aff7eb543d857a03bdd138bf9bdedd05468c1d54cf0bc5ca030e39482da18a8cfa87edd180e3f2ac9eff16cee14c8fd8e291a4a75156b3a0ec857ca3ca', 1, NULL, NULL, 'izabella@sawaynmurazik.us')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.8ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `perishable_token` = 'wX3ZNerhtpO6OlujE1DI', `last_login_at` = '2009-10-20 06:20:39', `last_login_ip` = '0.0.0.0', `current_login_at` = '2009-10-20 06:20:39', `login_count` = 2, `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 9[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing UsersController#update (for 0.0.0.0 at 2009-10-20 11:50:39) [POST]
+  Parameters: {"action"=>"update", "id"=>"9", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"nayeli_becker@ziemann.com"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `perishable_token` = 'A1GBR6V_3aVSlOoYDnrR', `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 9[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'nayeli_becker@ziemann.com' AND `users`.id <> 9) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '302851cb0dab19061676245e2c90bb6e08fcbc0ca27c9d33f997d546f22a979ae290680b8383b864c50bc30f3b64571dee44869693b69db5ac594aed118d6bb0' AND `users`.id <> 9) LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-10-20 06:20:39', `crypted_password` = 'd8cb468b0a617f21c2b2e98b924fd6cda08584ad0ef3366897defb1248842ed104b1e8d303a75510ca5d7a64358c170128c78b34b5871f0c019f9ff380ad6ede', `perishable_token` = 'vJJOUwXetvy3XVckTlF2', `email` = 'nayeli_becker@ziemann.com', `current_login_at` = '2009-10-20 06:20:39', `password_salt` = 'ZnmF8CE9tfjeQVzE_DyP', `login_count` = 3, `persistence_token` = '302851cb0dab19061676245e2c90bb6e08fcbc0ca27c9d33f997d546f22a979ae290680b8383b864c50bc30f3b64571dee44869693b69db5ac594aed118d6bb0', `last_request_at` = '2009-10-20 06:20:39' WHERE `id` = 9[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/account
+Completed in 29ms (DB: 9) | 302 Found [http://test.host/account?id=9&user%5Bemail%5D=nayeli_becker%40ziemann.com&user%5Bpassword%5D=password&user%5Bpassword_confirmation%5D=password]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-10-20 11:50:39) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"fatima@jenkinsgleason.name"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'fatima@jenkinsgleason.name') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '26d39a016b95178500d74551d6ec1c3dc1969d33e084bec8f74c04b6bcf091623af38b2b63fc6f25cbf0d5ffcd5f0dffa2c7d7332e0706bfe6744b67da22e1ac') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'BRL6iPSh0_JDSxBegvCZ') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (6.4ms)
+Completed in 27ms (View: 16, DB: 2) | 200 OK [http://test.host/account?user%5Bemail%5D=fatima%40jenkinsgleason.name&user%5Bpassword%5D=badpass&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-10-20 11:50:40) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"amely_towne@grant.us"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'amely_towne@grant.us') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd2690f2f06a0db86aa5c003fd2d3923f8cbddddaa47302df93e35268e3c9a30b31e409521a26f7f5d170b875b2e87748fb5e69e840e98ea9b60aa9859c0afc33') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY '6kWgnX6uxxqvmahg5En-') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (6.1ms)
+Completed in 25ms (View: 14, DB: 2) | 200 OK [http://test.host/account?user%5Bemail%5D=amely_towne%40grant.us&user%5Bpassword%5D=badpass&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-10-20 11:50:40) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"keaton_kuvalis@willmslangosh.ca"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'keaton_kuvalis@willmslangosh.ca') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '5edc12dc49d74e0ec345d37f80fdf5d6efa3b8d483bc800bc649076cde1d63435c67e37244ca7e83b5c1fb388935dcc0ba01129c1f6f9b97954b0cce7abe6cb2') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY '6813cLaFUH0ExkQ1T80z') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (6.3ms)
+Completed in 26ms (View: 14, DB: 2) | 200 OK [http://test.host/account?user%5Bemail%5D=keaton_kuvalis%40willmslangosh.ca&user%5Bpassword%5D=badpass&user%5Bpassword_confirmation%5D=password]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2009-10-20 11:50:40) [POST]
+  Parameters: {"action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"guido@thiel.name"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'guido@thiel.name') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'bd66ebcadaea23633309f0876a75024f009074e8bb0b9def33f1cc3c7eaee3095614ca79bd5abea4bc36b3077855c8b2987709174163d14924902974046f045b') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'Gmq6BtsdNiCDQ_WGpfdX') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (6.0ms)
+Completed in 25ms (View: 15, DB: 2) | 200 OK [http://test.host/account?user%5Bemail%5D=guido%40thiel.name&user%5Bpassword%5D=badpass&user%5Bpassword_confirmation%5D=password]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
