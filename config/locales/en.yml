@@ -13,6 +13,7 @@ en:
   edit_my_account: Edit my account
   update: Update
   remeber_me: Remeber me
+  admin: Admin
 
   flash:
     user:
@@ -26,6 +27,8 @@ en:
       logout:
         success: Logout successful! 
         required: You must be logged out to access this page
+      admin:
+        required: You must be an administrator to access this page
         
   authlogic:
     error_messages:

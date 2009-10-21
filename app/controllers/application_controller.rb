@@ -4,8 +4,9 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session, :current_user, :is_admin
   filter_parameter_logging :password, :password_confirmation
+  before_filter :require_user
 
   private
     def current_user_session
@@ -34,6 +35,17 @@ class ApplicationController < ActionController::Base
         redirect_to account_url
         return false
       end
+    end
+
+    def require_admin
+      unless is_admin
+        flash[:notice] = I18n.t('flash.user.admin.required')
+        redirect_to root_path
+      end
+    end
+
+    def is_admin
+      current_user.admin
     end
     
     def store_location

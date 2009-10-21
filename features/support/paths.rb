@@ -14,8 +14,12 @@ module NavigationHelpers
       new_user_path
     when /the login page/
       new_user_session_path
+    when /the failed login page/
+      user_session_path
     when /logged in page/
       account_path
+    when /admin section/
+      admin_cms_pages_path
     
     # Add more mappings here.
     # Here is a more fancy example:

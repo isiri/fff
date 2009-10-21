@@ -13,8 +13,9 @@
     .header
       %h1 Forever Family Foundation
       = link_to t("home"), root_path      
-      = link_to t("login"), new_user_session_path      
-      = link_to t("register"), new_account_path      
+      = link_to t("login"), new_user_session_path unless current_user
+      = link_to t("register"), new_account_path unless current_user
+      = link_to t("admin"), admin_cms_pages_path if  current_user and is_admin
       = link_to t("logout"), user_session_path, :method => :delete if current_user
     .content
       %p

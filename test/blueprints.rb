@@ -6,6 +6,14 @@ User.blueprint do
   email { Sham.email }
   password 'password' 
   password_confirmation 'password'
+  admin { false }
+end
+
+User.blueprint(:admin) do
+  email  { 'admin@example.com' }
+  password 'password' 
+  password_confirmation 'password'
+  admin { true }
 end
 
 Sham.define do

@@ -15,7 +15,8 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime  :current_login_at                                   # optional, see Authlogic::Session::MagicColumns
       t.datetime  :last_login_at                                      # optional, see Authlogic::Session::MagicColumns
       t.string    :current_login_ip                                   # optional, see Authlogic::Session::MagicColumns
-      t.string    :last_login_ip      
+      t.string    :last_login_ip    
+      t.boolean   :admin  
       t.timestamps
     end
     add_index :users, :email, :unique => true
