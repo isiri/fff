@@ -1,0 +1,24 @@
+!!! XML
+!!!
+%html{html_attrs}
+  %head
+    %title= "Forever Family Foundation"
+    = stylesheet_link_tag 'admin', :media => 'screen'
+    = javascript_include_tag "prototype", "effects", "controls"
+    = admin_assistant_includes :theme => 'activescaffold'
+
+%body
+  .container
+    .header
+      %h1 Forever Family Foundation
+    .content
+      %ul.horizontal
+        %li 
+          = link_to 'CMS Pages', admin_cms_pages_path
+        %li
+          = link_to 'ADG Questions', admin_after_life_discussion_group_questions_path
+        %li
+          = link_to 'Logout', user_session_path, :method => :delete
+      %p
+        = flash[:notice]
+      = yield
