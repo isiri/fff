@@ -14,6 +14,17 @@ en:
   update: Update
   remeber_me: Remeber me
   admin: Admin
+  first_name: First name
+  middle_name: Middle name
+  last_name: Last name
+  address: Address
+  city: City
+  state: State
+  zip: Zip
+  home_phone: Home phone
+  cell_phone: Cell phone
+  work_phone: Work phone
+  relationship: Relationship
 
   flash:
     user:

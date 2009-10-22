@@ -12,3 +12,67 @@
   = form.label :password_confirmation, t('password_confirmation')
   %br
   = form.password_field :password_confirmation
+
+%hr
+
+%p
+  = form.label :first_name, t('first_name')
+  %br
+  = form.text_field :first_name
+
+%p
+  = form.label :middle_name, t('middle_name')
+  %br
+  = form.text_field :middle_name
+
+%p
+  = form.label :last_name, t('last_name')
+  %br
+  = form.text_field :last_name
+
+- form.fields_for :address do |address_form|
+  %p
+    = address_form.label :address, t('address')
+    %br
+    = address_form.text_area :address, :class => 'simple'
+  %p
+    = address_form.label :city, t('city')
+    %br
+    = address_form.text_field :city
+  %p
+    = address_form.label :state, t('state')
+    %br
+    = address_form.text_field :state
+  %p
+    = address_form.label :zip, t('zip')
+    %br
+    = address_form.text_field :zip
+
+%p
+  = form.label :home_phone, t('home_phone')
+  %br
+  = form.text_field :home_phone
+
+%p
+  = form.label :cell_phone, t('cell_phone')
+  %br
+  = form.text_field :cell_phone
+
+%p
+  = form.label :work_phone, t('work_phone')
+  %br
+  = form.text_field :work_phone
+
+%hr
+
+- form.fields_for :user_family_members do |family_member_form|
+  %p
+    = family_member_form.label :first_name, t('first_name')
+    = family_member_form.text_field :first_name
+
+    = family_member_form.label :last_name, t('last_name')
+    = family_member_form.text_field :last_name
+
+    = family_member_form.label :relationship, t('relationship')
+    = family_member_form.text_field :relationship
+

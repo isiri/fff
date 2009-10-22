@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091020095643) do
+ActiveRecord::Schema.define(:version => 20091022112233) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "address",          :limit => 500
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "after_life_discussion_group_questions", :force => true do |t|
     t.string   "question"
@@ -37,6 +48,15 @@ ActiveRecord::Schema.define(:version => 20091020095643) do
   add_index "cms_pages", ["position"], :name => "index_cms_pages_on_position"
   add_index "cms_pages", ["reference_string"], :name => "index_cms_pages_on_reference_string", :unique => true
 
+  create_table "user_family_members", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "relationship"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                              :null => false
     t.string   "crypted_password",                   :null => false
@@ -54,6 +74,12 @@ ActiveRecord::Schema.define(:version => 20091020095643) do
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "cell_phone"
+    t.string   "home_phone"
+    t.string   "work_phone"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -12,7 +12,10 @@
   .container
     .header
       %h1 Forever Family Foundation
-      = link_to t("home"), root_path      
+      - if current_user
+        = link_to t("home"), url_for(:controller => 'welcome', :action => 'logged_in_index')
+      - else
+        = link_to t("home"), root_path
       = link_to t("login"), new_user_session_path unless current_user
       = link_to t("register"), new_account_path unless current_user
       = link_to t("admin"), admin_cms_pages_path if  current_user and is_admin
@@ -20,5 +23,7 @@
     .content
       %p
         = flash[:notice]
+      %h2= @cms_page.title
+      = textilize @cms_page.body
       = yield
   

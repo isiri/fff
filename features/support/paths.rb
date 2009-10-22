@@ -17,7 +17,7 @@ module NavigationHelpers
     when /the failed login page/
       user_session_path
     when /logged in page/
-      account_path
+      url_for(:controller => 'welcome', :action => 'logged_in_index', :only_path => true)
     when /admin section/
       admin_cms_pages_path
     

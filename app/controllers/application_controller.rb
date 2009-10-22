@@ -6,9 +6,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   helper_method :current_user_session, :current_user, :is_admin
   filter_parameter_logging :password, :password_confirmation
-  before_filter :require_user
+  before_filter :require_user, :get_cms_page
 
   private
+
+    def get_cms_page
+      controller = self.controller_name.titleize
+      # Admin user should not need to differentiate between edit / update and new / create
+      action = case self.action_name
+      when "create"
+        "New"
+      when "update"
+        "Edit"
+      else
+        self.action_name.titleize
+      end
+      @cms_page = CmsPage.get([controller,action].join(": "))
+    end
+
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
